@@ -33,7 +33,7 @@ fun StudentProfileScreen(
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
 
-        // — Header con foto y nombre —
+
         Spacer(modifier = Modifier.height(16.dp))
 
         Icon(
@@ -62,7 +62,7 @@ fun StudentProfileScreen(
         Spacer(modifier = Modifier.height(16.dp))
         HorizontalDivider()
 
-        // — Descripción personal —
+
         Spacer(modifier = Modifier.height(12.dp))
         SectionTitle(title = "Sobre mí")
         Text(
@@ -71,13 +71,13 @@ fun StudentProfileScreen(
             color = MaterialTheme.colorScheme.onSurfaceVariant
         )
 
-        // — Botón interactivo —
+
         Spacer(modifier = Modifier.height(16.dp))
         Button(onClick = { viewModel.toggleExtraInfo() }) {
             Text(text = if (showExtraInfo) "Ocultar información adicional" else "Ver información adicional")
         }
 
-        // — Info adicional (visible u oculta) —
+
         if (showExtraInfo) {
             Spacer(modifier = Modifier.height(12.dp))
             SectionTitle(title = "Información adicional")
@@ -88,25 +88,24 @@ fun StudentProfileScreen(
 
         HorizontalDivider(modifier = Modifier.padding(vertical = 12.dp))
 
-        // — Hobbies —
+
         SectionTitle(title = "Hobbies")
         ItemList(items = profile.hobbies)
 
         Spacer(modifier = Modifier.height(8.dp))
 
-        // — Pasatiempos —
+
         SectionTitle(title = "Pasatiempos")
         ItemList(items = profile.pastimes)
 
         Spacer(modifier = Modifier.height(8.dp))
 
-        // — Deportes —
         SectionTitle(title = "Deportes favoritos")
         ItemList(items = profile.sports)
 
         Spacer(modifier = Modifier.height(8.dp))
 
-        // — Intereses —
+
         SectionTitle(title = "Intereses personales")
         ItemList(items = profile.interests)
 

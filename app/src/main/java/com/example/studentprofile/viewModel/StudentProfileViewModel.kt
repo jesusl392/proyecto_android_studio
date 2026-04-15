@@ -7,21 +7,19 @@ import kotlinx.coroutines.flow.StateFlow
 
 class StudentProfileViewModel : ViewModel() {
 
-    // Estado que controla si la info adicional está visible o no
     private val _showExtraInfo = MutableStateFlow(false)
     val showExtraInfo: StateFlow<Boolean> = _showExtraInfo
 
-    // Datos del perfil
     private val _profile = MutableStateFlow(
         StudentProfile(
-            name = "Juan David Pérez García",
-            program = "Ingeniería de Software",
+            name = "Jesús Santiago Lozano Peña",
+            program = "Ingeniería de Sistemas",
             semester = "5° Semestre",
             description = "Estudiante apasionado por el desarrollo de software y la tecnología. " +
                     "Me gusta aprender nuevas herramientas y trabajar en proyectos creativos.",
             age = 21,
             city = "Bogotá, Colombia",
-            email = "juan.perez@ucundinamarca.edu.co",
+            email = "jesusslozano@ucundinamarca.edu.co",
             hobbies = listOf(
                 "Programar aplicaciones móviles",
                 "Escuchar música",
@@ -47,7 +45,7 @@ class StudentProfileViewModel : ViewModel() {
     )
     val profile: StateFlow<StudentProfile> = _profile
 
-    // Función interactiva: mostrar u ocultar información adicional
+
     fun toggleExtraInfo() {
         _showExtraInfo.value = !_showExtraInfo.value
     }
