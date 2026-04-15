@@ -17,7 +17,7 @@ class StudentProfileViewModel : ViewModel() {
             semester = "5° Semestre",
             description = "Estudiante apasionado por el desarrollo de software y la tecnología. " +
                     "Me gusta aprender nuevas herramientas y trabajar en proyectos creativos.",
-            age = 21,
+            age = 19,
             city = "Bogotá, Colombia",
             email = "jesusslozano@ucundinamarca.edu.co",
             hobbies = listOf(

@@ -12,11 +12,12 @@ import androidx.compose.ui.unit.sp
 @Composable
 fun SectionTitle(title: String) {
     Text(
-        text = title,
+        text = title.uppercase(),
         fontSize = 18.sp,
         fontWeight = FontWeight.Bold,
         color = MaterialTheme.colorScheme.primary,
-        modifier = Modifier.padding(vertical = 8.dp)
+        letterSpacing = 2.sp,
+        modifier = Modifier.padding(top = 20.dp, bottom = 8.dp)
     )
 }
 
@@ -25,17 +26,19 @@ fun InfoRow(label: String, value: String) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 4.dp)
+            .padding(vertical = 6.dp),
+        horizontalArrangement = Arrangement.SpaceBetween
     ) {
         Text(
-            text = "$label: ",
+            text = label,
             fontWeight = FontWeight.SemiBold,
-            fontSize = 14.sp
+            fontSize = 15.sp,
+            color = MaterialTheme.colorScheme.onSurfaceVariant
         )
         Text(
             text = value,
-            fontSize = 14.sp,
-            color = MaterialTheme.colorScheme.onSurfaceVariant
+            fontSize = 13.sp,
+            color = MaterialTheme.colorScheme.onSurface
         )
     }
 }
@@ -45,18 +48,28 @@ fun ItemCard(text: String) {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 4.dp),
-        shape = RoundedCornerShape(8.dp),
+            .padding(vertical = 3.dp),
+        shape = RoundedCornerShape(6.dp),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.secondaryContainer
+            containerColor = MaterialTheme.colorScheme.surfaceVariant
         )
     ) {
-        Text(
-            text = "• $text",
-            modifier = Modifier.padding(horizontal = 16.dp, vertical = 8.dp),
-            fontSize = 14.sp,
-            color = MaterialTheme.colorScheme.onSecondaryContainer
-        )
+        Row(
+            modifier = Modifier.padding(horizontal = 14.dp, vertical = 10.dp),
+            horizontalArrangement = Arrangement.Start
+        ) {
+            Text(
+                text = "—",
+                fontSize = 13.sp,
+                color = MaterialTheme.colorScheme.primary,
+                modifier = Modifier.padding(end = 8.dp)
+            )
+            Text(
+                text = text,
+                fontSize = 14.sp,
+                color = MaterialTheme.colorScheme.onSurface
+            )
+        }
     }
 }
 
